@@ -1,0 +1,36 @@
+{
+    "project": {
+        "drawings": [
+            {
+                "id": "drawing-0",
+                "name": "shoulder",
+                "frames": ["0"],
+                "offset": { "x": 0, "y": 0 }
+            },
+            {
+                "id": "drawing-1",
+                "name": "torso",
+                "frames": ["1"],
+                "offset": { "x": 0, "y": 0 }
+            }
+        ],
+        "scene": {
+            "objects": [
+                {
+                    "id": "object-0",
+                    "drawing": "drawing-0",
+                    "position": { "x": 0, "y": 0 }
+                },
+                {
+                    "id": "object-1",
+                    "drawing": "drawing-1",
+                    "position": { "x": 100, "y": 0 }
+                }
+            ]
+        }
+    },
+    "resources": {
+        "0": { "type": "canvas-datauri", "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAwCAYAAACG5f33AAAAAXNSR0IArs4c6QAAAddJREFUaIHtmkuOwzAIQMmoy9ygV8pxe6XcoPt2Fcly/QHMLyPeajRSMH7CNnEDkCRJkiRMNu8EqLxfz0/r//txuswlvMCeMCzaYkMIXJVERVKquUBrWRhWhJoIjCitB1WmikBvYS0JnJwwMkUEegsrGU2am+coJkug96bPbWVW8u7FfmAelhZWJjOL3Up8P84tStVPK1AyUc7yojwjtXyvOJj4qAqUYLa8WlVl+XaB3SZqzARa8H49P1QRlO2kxVCg1PK1rCRMztxqa3HbCqROWlJaSWiBrSVJoTwMtE5t8aazh2aPNhtLIvZSHyjBqJo09toypmbfyBLI7bc0JqG1t43GKEELxCS6H+e22hZw8rEapwVKYK8zr6mXDfY5KlpxW2PMUN2T6mSkXuY5LQz2Geqpb3KIXAcIVaTVMq3HomB6Cl9/U1oai1uXlV7TpZHG3rxErbqSH4He92zRK67mTyrQKloXDnVc6XFEfnxZxaItKceRxP0yIVJPx8F00665uzwApwq885KtcTtE/oM8AIcK1J6Y9Wdu5qewxt2c17eBAIY30gDye5+nuAtSAt5vKSUR5AEsflzk2XRH4TYfWEYTd+GaFOdH8GiES45yb5gkSZL48gVSR0fgSztFOQAAAABJRU5ErkJggg==" },
+        "1": { "type": "canvas-datauri", "data": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAjlJREFUeJztW9GtwyAMJFVH6izZo5Nkj86Snfq+kCjPgG3OOCE56UlVk5zh7Bgb+kK4cW0s3gPowfvz+taub+venN8pBGhNtIWaEDABEN6QckpQsq8WQDO4lgioCUc7OR9lny0AenBIToq/xJ2LMMQjXGzrvkht5hOSvor/BLDyCoe35T3qXu79pWef6YXRHs8R7XPeYdRYXd9HzrM5EONMuasCUIOwDs8SF9pBkfdZI+eKQj1z1InngBrRRkyJw3Ly0Y6pylJBRnk9tSded3sNxs+lDD9y8iEYR0DLuOey+5MER8O73kjhIsAIlErk/PvpBODkmRRDlpxRkLTBEWQESDusI0E61kf8kIdO/MuvIYHk1XL9RAAVQq0O7UjQlO4P6staBYf02vvz+lpFFxekACFg6npvcMQtCnAm9ERRVYASsXfYUpAsfSnEETBir76XS8LbFMDa2whBUw7peFkRYCGC1mMlaIVkvwIW4drjORRg53WcQonbqHBPdbj31SASAHEASk1cEgnSXekWoO0wOqFpYJIEteRnwBSVYA9uAbwH4A2XPcE8l3juNZgJwF3O4jK4rfuiWUZ7ocrq6IbIs8GaKgdolulpBNDWKNMIkO5iS6ASAFURRh7PCtMtCdYm3cMvFXNoHUC1vFQ3OHJH2lQAzURGF0OmApzhHGGaVSCEi9cBWtwCeA/AG+4CeCdKdwFQuHwvoMWh/meoh18bAV1NCPqQwsMOpAvT/DYHZcfS3o0bN+bHHwGQpy+vSQcvAAAAAElFTkSuQmCC" }
+    }
+}

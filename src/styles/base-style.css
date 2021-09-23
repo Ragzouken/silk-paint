@@ -32,3 +32,8 @@ canvas, img {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
+
+/* prevent pull down to refresh page (and lose data rip) */
+body {
+    overscroll-behavior-y: contain;
+}

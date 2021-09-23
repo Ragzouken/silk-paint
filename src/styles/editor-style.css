@@ -1,0 +1,271 @@
+:root {
+    --button-color: #ffd800;
+    --frame-color: #367b6b;
+
+    /** diagonal stripes for showing clearly transparent pixels of the paint area */
+    --trans-color-1: rgb(32, 32, 32);
+    --trans-color-2: rgb(48, 48, 48);
+    --trans-gradient: repeating-linear-gradient( -45deg, var(--trans-color-1), var(--trans-color-1) .5em, var(--trans-color-2) .5em, var(--trans-color-2) 1em );
+
+    font-family: sans-serif;
+}
+
+html {
+    width: 100vw; height: calc(100 * var(--vh));
+    background: var(--trans-gradient);
+
+    cursor: grab;
+}
+
+body {
+    width: 100%; height: 100%;
+    margin: 0; padding: 0;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+button {
+    flex: 1;
+    flex-direction: column;
+    white-space: nowrap;
+
+    border: none;
+    border-radius: 1em;
+    background-color: var(--button-color);
+
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: .25em;
+}
+
+button:active {
+    filter: invert();
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.radio-select label {
+    position: relative;
+
+    margin: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--button-color);
+
+    min-height: 3em;
+}
+
+.radio-select input[type="radio"] {
+    margin: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: inherit;
+
+    position: absolute;
+    width: 100%; height: 100%;
+}
+
+.radio-select label img, .radio-select label svg, button img, button svg {
+    pointer-events: none;
+    width: 32px; height: 32px;
+}
+
+.radio-select label img, .radio-select label svg {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-select input[type="radio"]:checked {
+    border: none;
+    background: blue;
+}
+
+.radio-select img {
+    filter: brightness(0);
+}
+
+.radio-select svg {
+    color: black;
+}
+
+.radio-select input[type="radio"]:checked + svg {
+    color: white;
+}
+
+.radio-select input[type="radio"]:checked + img {
+    filter: none;
+}
+
+@keyframes selection-flash {
+    0%   { box-shadow: 0 0 0 .5em black; }
+    100% { box-shadow: 0 0 0 .5em white; }
+}
+
+.horizontal-capsule > *, .vertical-capsule > * {
+    flex: 1;
+}
+
+.horizontal-capsule {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.vertical-capsule {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-capsule > :first-child {
+    border-radius: 1em 0 0 1em;
+}
+
+.horizontal-capsule > :last-child {
+    border-radius: 0 1em 1em 0;
+}
+
+.vertical-capsule > :first-child {
+    border-radius: 1em 1em 0 0;
+}
+
+.vertical-capsule > :last-child {
+    border-radius: 0 0 1em 1em;
+}
+
+:focus {
+    outline: thick solid white;
+    z-index: 5;
+}
+:focus:not(:focus-visible) { 
+    outline: unset 
+}
+
+:focus + * {
+    z-index: 5;
+}
+
+.hanging-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+
+    height: 32px;
+}
+
+.hanging-menu > * {
+    background-color: var(--button-color);
+
+    font-weight: bold;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    border: none;
+    border-radius: 0 0 1em 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.grid8 {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.grid4 label { border-radius: 0; }
+.grid4 label:nth-child(1) { border-top-left-radius: 1em; }
+.grid4 label:nth-child(4) { border-top-right-radius: 1em; }
+.grid4 label:nth-last-child(4) { border-bottom-left-radius: 1em; }
+.grid4 label:nth-last-child(1) { border-bottom-right-radius: 1em; }
+
+.grid8 label { border-radius: 0; }
+.grid8 label:nth-child(1) { border-top-left-radius: 1em; }
+.grid8 label:nth-child(8) { border-top-right-radius: 1em; }
+.grid8 label:nth-last-child(8) { border-bottom-left-radius: 1em; }
+.grid8 label:nth-last-child(1) { border-bottom-right-radius: 1em; }
+
+.grid8 label :not(input) { border-radius: inherit; }
+
+input[type="text"], textarea {
+    font-family: monospace;
+
+    flex: 1;
+    flex-basis: 100%;
+    min-width: 0;
+    padding: .5em .75em;
+    border: 0;
+    border-radius: .5em;
+    color: white;
+    background: black;
+
+    margin: 0;
+}
+
+body {
+    display: flex; flex-direction: column;
+    align-items: center;
+}
+
+#frame {
+    flex: 1;
+    width: 100%;
+    pointer-events: none;
+}
+
+#tool-panel {
+    width: 100%;
+    max-width: 600px;
+    z-index: 1;
+
+    border-radius: 1.25rem 1.25rem 0 0;
+    background: var(--frame-color);
+
+    display: flex; flex-direction: column;
+    padding: 1rem; gap: 1rem;
+
+    cursor: initial;
+}
+
+#viewport {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    overflow: hidden;
+}
+
+#scene {
+    position: absolute; transform-origin: 0 0;
+    width: 0; height: 0;
+}
+
+#scene > canvas {
+    position: absolute;
+    outline: 1px dotted rgba(255, 255, 255, 25%);
+
+    left: 50%;
+    top: 50%;
+
+    cursor: inherit;
+}
+
+#scene > canvas:hover {
+    outline: 1px dotted red;
+}
